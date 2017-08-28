@@ -6,10 +6,12 @@ var co = require('co')
 
 
 router.get('/', function(req, res){
-    categoryModel.find( function(err,category){ //첫번째 인자는 err, 두번째는 받을 변수명
+    categoryModel.find(function(err, category){
+        categoryModel.count(function(err, c){
+            res.render('photo/categoryselect', {category : category, countnum : c});
+        })
 
-        res.render( 'photo/categoryselect' , { category : category });
-    });
+    })
 })
 
 router.get('/delete/:id', function(req, res){
@@ -27,5 +29,19 @@ router.get('/delete/:id', function(req, res){
     })
 })
 
+router.get('/testcategoryselect', function(req, res){
+
+
+    categoryModel.find(function(err, category){
+        categoryModel.count(function(err, c){
+            res.render('photo/testcategoryselect', {category : category, countnum : c});
+        })
+
+    })
+})
+
+router.get('/testdetail', function(req, res){
+    res.render('photo/testdetail')
+})
 
 module.exports = router;

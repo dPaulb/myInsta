@@ -8290,132 +8290,130 @@
 				</ul>
 				<div>
 					<div class="_cmdpi">
-                        <%
 
-                        var foo = category.content.split('<img');
-                        var div = (foo.length -1) / 3;
-                        if(Math.floor(div) === 1){
-                            div = 2;
-                        }
-                        if((foo.length - 1) % 3 === 0)
+                        <%
+                        if(countnum % 3 === 0)
                         {
-                        for(var j = 1;j<=1;j++){
+                        for(var j=1;j<=1;j++){
+
                         %>
                         <%
-                        if(category.content){
 
-                        for(var i=1;i<foo.length;i=i+3)
+
+                        for(var i=0;i<countnum;i=i+3)
                         {
-
+                        if(category[i].photoName){
+                            var foo = category[i].photoName.split("/");
                         %>
+
                         <div class="_70iju">
 
                             <div class="_mck9w _gvoze _f2mse">
-                                    <a href="/photoView/<%= foo[i].split('src=')[1].split('"')[1].split('/uploads')[1].split('/')[1] %>">
-                                        <div class="_e3il2">
+
+                                    <a href="/morephoto/<%=category[i].id%>"><div class="_e3il2">
                                     <div class="_4rbun">
                                     <img alt="Scruff" class="_2di5p"
-                                         src="<%=foo[i].split('src=')[1].split('"')[1]%>"
+                                         src="/uploads/<%=category[i].photoName.split("/")[1]%>"
                                          style="object-fit : cover">
 										</div>
                                             <!-- react-empty: 48 -->
 										<div class="_si7dy"></div>
 									</div></a>
+
 							</div>
-							<div class="_mck9w _gvoze _f2mse">
-								<a href="/photoView/<%= foo[i+1].split('src=')[1].split('"')[1].split('/uploads')[1].split('/')[1] %>"><div class="_e3il2">
-										<div class="_4rbun">
-											<img alt="Amazing photograph ✨" class="_2di5p"
-                                                 src="<%=foo[i+1].split('src=')[1].split('"')[1]%>"
-                                                 style="object-fit : cover">
+                             <div class="_mck9w _gvoze _f2mse">
+
+                                    <a href="/morephoto/<%=category[i+1].id%>"><div class="_e3il2">
+                                    <div class="_4rbun">
+                                    <img alt="Scruff" class="_2di5p"
+                                         src="/uploads/<%=category[i+1].photoName.split("/")[1]%>"
+                                         style="object-fit : cover">
 										</div>
-                                        <!-- react-empty: 55 -->
+                                            <!-- react-empty: 48 -->
 										<div class="_si7dy"></div>
 									</div></a>
+
 							</div>
-							<div class="_mck9w _gvoze _f2mse">
-								<a href="/photoView/<%= foo[i+2].split('src=')[1].split('"')[1].split('/uploads')[1].split('/')[1] %>"><div class="_e3il2">
-										<div class="_4rbun">
-											<img alt="Fricken Croatia you are so beautiful"
-                                                 class="_2di5p"
-                                                 src="<%=foo[i+2].split('src=')[1].split('"')[1]%>"
-                                                 style="object-fit : cover">
+                             <div class="_mck9w _gvoze _f2mse">
+
+                                    <a href="/morephoto/<%=category[i+2].id%>"><div class="_e3il2">
+                                    <div class="_4rbun">
+                                    <img alt="Scruff" class="_2di5p"
+                                         src="/uploads/<%=category[i+2].photoName.split("/")[1]%>"
+                                         style="object-fit : cover">
 										</div>
-                                        <!-- react-empty: 62 -->
+                                            <!-- react-empty: 48 -->
 										<div class="_si7dy"></div>
 									</div></a>
+
 							</div>
-
-
 
                         </div>
                         <%}}%>
-                        <%}
-                        }
-                        else if((foo.length - 1) % 3 === 1)
-                        {
-                            for(var j = 1;j<=1;j++){
+                        <%
+                        }}
+                        else if(countnum % 3 === 1){
+                            for(var j=1;j<=1;j++){
+
                         %>
                         <%
-                            if(category.content){
-
-                                for(var i=1;i<foo.length-1;i=i+3)
-                                {
-
+                            for(var i=0;i<countnum-1;i=i+3)
+                            {
+                                if(category[i].photoName){
+                                    var foo = category[i].photoName.split("/");
                         %>
-
-
-
                         <div class="_70iju">
 
                             <div class="_mck9w _gvoze _f2mse">
-                                    <a href="/photoView/<%= foo[i].split('src=')[1].split('"')[1].split('/uploads')[1].split('/')[1] %>"><div class="_e3il2">
+
+                                    <a href="/morephoto/<%=category[i].id%>"><div class="_e3il2">
                                     <div class="_4rbun">
                                     <img alt="Scruff" class="_2di5p"
-                                         src="<%=foo[i].split('src=')[1].split('"')[1]%>"
+                                         src="/uploads/<%=category[i].photoName.split("/")[1]%>"
                                          style="object-fit : cover">
 										</div>
                                             <!-- react-empty: 48 -->
 										<div class="_si7dy"></div>
 									</div></a>
+
 							</div>
-							<div class="_mck9w _gvoze _f2mse">
-								<a href="/photoView/<%= foo[i+1].split('src=')[1].split('"')[1].split('/uploads')[1].split('/')[1] %>"><div class="_e3il2">
-										<div class="_4rbun">
-											<img alt="Amazing photograph ✨" class="_2di5p"
-                                                 src="<%=foo[i+1].split('src=')[1].split('"')[1]%>"
-                                                 style="object-fit : cover">
+                             <div class="_mck9w _gvoze _f2mse">
+
+                                    <a href="/morephoto/<%=category[i+1].id%>"><div class="_e3il2">
+                                    <div class="_4rbun">
+                                    <img alt="Scruff" class="_2di5p"
+                                         src="/uploads/<%=category[i+1].photoName.split("/")[1]%>"
+                                         style="object-fit : cover">
 										</div>
-                                        <!-- react-empty: 55 -->
+                                            <!-- react-empty: 48 -->
 										<div class="_si7dy"></div>
 									</div></a>
+
 							</div>
-							<div class="_mck9w _gvoze _f2mse">
-								<a href="/photoView/<%= foo[i+2].split('src=')[1].split('"')[1].split('/uploads')[1].split('/')[1] %>"><div class="_e3il2">
-										<div class="_4rbun">
-											<img alt="Fricken Croatia you are so beautiful"
-                                                 class="_2di5p"
-                                                 src="<%=foo[i+2].split('src=')[1].split('"')[1]%>"
-                                                 style="object-fit : cover">
+                             <div class="_mck9w _gvoze _f2mse">
+
+                                    <a href="/morephoto/<%=category[i+2].id%>"><div class="_e3il2">
+                                    <div class="_4rbun">
+                                    <img alt="Scruff" class="_2di5p"
+                                         src="/uploads/<%=category[i+2].photoName.split("/")[1]%>"
+                                         style="object-fit : cover">
 										</div>
-                                        <!-- react-empty: 62 -->
+                                            <!-- react-empty: 48 -->
 										<div class="_si7dy"></div>
 									</div></a>
+
 							</div>
-
-
 
                         </div>
-
-
-                        <%}}}%>
-
+                        <%}}%>
+                        <%
+                        }%>
                         <div class="_70iju">
 		<div class="_mck9w _gvoze _f2mse">
-			<a href="/photoView/<%= foo[foo.length - 1].split('src=')[1].split('"')[1].split('/uploads')[1].split('/')[1] %>">
+			<a href="/morephoto/<%=category[coutnum-1].id%>">
 				<div class="_e3il2">
 					<div class="_4rbun">
-						<img src = "<%=foo[foo.length - 1].split('src=')[1].split('"')[1]%>" class="_2di5p" style="object-fit : cover">
+						<img src = "/uploads/<%=category[countnum-1].photoName.split("/")[1]%>" class="_2di5p" style="object-fit : cover">
 					</div><!-- react-empty: 52 -->
 				<div class="_si7dy"></div>
 		</div>
@@ -8426,80 +8424,78 @@
 
 	</div>
 
-
                         <%
                         }
-                        else if((foo.length - 1) % 3 === 2)
-                        {
-                            for(var j = 1;j<=1;j++){
+                        else if(countnum % 3 === 2){
+                            for(var j=1;j<=1;j++){
+
                         %>
                         <%
-                            if(category.content){
-
-                                for(var i=1;i<foo.length-2;i=i+3)
-                                {
-
+                            for(var i=0;i<countnum-2;i=i+3)
+                            {
+                                if(category[i].photoName){
+                                    var foo = category[i].photoName.split("/");
                         %>
-
-
                         <div class="_70iju">
 
                             <div class="_mck9w _gvoze _f2mse">
-                                    <a href="/photoView/<%= foo[i].split('src=')[1].split('"')[1].split('/uploads')[1].split('/')[1] %>"><div class="_e3il2">
+
+                                    <a href="/morephoto/<%=category[i].id%>"><div class="_e3il2">
                                     <div class="_4rbun">
                                     <img alt="Scruff" class="_2di5p"
-                                         src="<%=foo[i].split('src=')[1].split('"')[1]%>"
+                                         src="/uploads/<%=category[i].photoName.split("/")[1]%>"
                                          style="object-fit : cover">
 										</div>
                                             <!-- react-empty: 48 -->
 										<div class="_si7dy"></div>
 									</div></a>
+
 							</div>
-							<div class="_mck9w _gvoze _f2mse">
-								<a href="/photoView/<%= foo[i+1].split('src=')[1].split('"')[1].split('/uploads')[1].split('/')[1] %>"><div class="_e3il2">
-										<div class="_4rbun">
-											<img alt="Amazing photograph ✨" class="_2di5p"
-                                                 src="<%=foo[i+1].split('src=')[1].split('"')[1]%>"
-                                                 style="object-fit : cover">
+                             <div class="_mck9w _gvoze _f2mse">
+
+                                    <a href="/morephoto/<%=category[i+1].id%>"><div class="_e3il2">
+                                    <div class="_4rbun">
+                                    <img alt="Scruff" class="_2di5p"
+                                         src="/uploads/<%=category[i+1].photoName.split("/")[1]%>"
+                                         style="object-fit : cover">
 										</div>
-                                        <!-- react-empty: 55 -->
+                                            <!-- react-empty: 48 -->
 										<div class="_si7dy"></div>
 									</div></a>
+
 							</div>
-							<div class="_mck9w _gvoze _f2mse">
-								<a href="/photoView/<%= foo[i+2].split('src=')[1].split('"')[1].split('/uploads')[1].split('/')[1] %>"><div class="_e3il2">
-										<div class="_4rbun">
-											<img alt="Fricken Croatia you are so beautiful"
-                                                 class="_2di5p"
-                                                 src="<%=foo[i+2].split('src=')[1].split('"')[1]%>"
-                                                 style="object-fit : cover">
+                             <div class="_mck9w _gvoze _f2mse">
+
+                                    <a href="/morephoto/<%=category[i+2].id%>"><div class="_e3il2">
+                                    <div class="_4rbun">
+                                    <img alt="Scruff" class="_2di5p"
+                                         src="/uploads/<%=category[i+2].photoName.split("/")[1]%>"
+                                         style="object-fit : cover">
 										</div>
-                                        <!-- react-empty: 62 -->
+                                            <!-- react-empty: 48 -->
 										<div class="_si7dy"></div>
 									</div></a>
+
 							</div>
-
-
 
                         </div>
-                    <%}}}%>
-
+                        <%}}}%>
                         <div class="_70iju">
 		<div class="_mck9w _gvoze _f2mse">
-			<a href="/photoView/<%= foo[foo.length - 2].split('src=')[1].split('"')[1].split('/uploads')[1].split('/')[1] %>">
+			<a href="/morephoto/<%=category[countnum-2].id%>">
 				<div class="_e3il2">
 					<div class="_4rbun">
-						<img src = "<%=foo[foo.length - 2].split('src=')[1].split('"')[1]%>" class="_2di5p" style="object-fit : cover">
+						<img src = "/uploads/<%=category[countnum-2].photoName.split("/")[1]%>" class="_2di5p" style="object-fit : cover">
 					</div><!-- react-empty: 52 -->
 				<div class="_si7dy"></div>
 		</div>
 		</a>
 		</div>
          <div class="_mck9w _gvoze _f2mse">
-			<a href="/photoView/<%= foo[foo.length - 1].split('src=')[1].split('"')[1].split('/uploads')[1].split('/')[1] %>">
+			<a href="/morephoto/<%=category[countnum-2].id%>">
 				<div class="_e3il2">
 					<div class="_4rbun">
-						<img src = "<%=foo[foo.length - 1].split('src=')[1].split('"')[1]%>" class="_2di5p" style="object-fit : cover">
+						<img src = "/uploads/<%=category[countnum-1].photoName.split("/")[1]%>" class="_2di5p" style="object-fit : cover">
 					</div><!-- react-empty: 52 -->
 				<div class="_si7dy"></div>
 		</div>
@@ -8509,18 +8505,7 @@
 		<div class="_f2mse _fk7b6"></div>
 
 	</div>
-
-                        <%}%>
-
-
-
-
-
-
-
-
-
-
+    <%}%>
 
 
                     </div>

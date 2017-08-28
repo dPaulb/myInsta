@@ -3,6 +3,7 @@ var router = express.Router();
 var multer = require('multer')
 var path = require('path')
 var CategoryModel = require('../models/CategoryModel')
+var ThumbnailModel = require('../models/ThumbnailModel')
 var fs = require('fs')
     , gm = require('gm');
 var adminRequired = require('../libs/adminRequired')
@@ -54,10 +55,20 @@ router.post('/', upload.any(), function (req, res, next) {
         numofphoto: 9
 
     })
+
+    const thumbnail = new ThumbnailModel({
+        title : (req.files) ? filenames : ""
+    })
+
     category.save(function(err){
-        res.redirect('/photocategoryselect')
+        thumbnail.save(function(err){
+            res.redirect('/photocategoryselect')
+        })
+
 
     })
+
+
 
 
 });
@@ -69,7 +80,7 @@ router.post('/products/ajax_summernote', upload.single('thumbnail'), function(re
 
 
     var imagePath = 'uploads/' + req.file.filename;
-    gm(imagePath).autoOrient().resize(640, 640).write('uploads/' + req.file.filename, function(err){
+    gm(imagePath).autoOrient().write('uploads/' + req.file.filename, function(err){
         if (!err) {
             res.send( '/uploads/' + req.file.filename);
         }
