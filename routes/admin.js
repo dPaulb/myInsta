@@ -31,7 +31,7 @@ router.get('/', adminRequired,function(req,res){
 router.post('/', adminRequired,upload.any(), function (req, res, next) {
 
     var imagePath = 'uploads/' + req.files[0].filename;
-    gm(imagePath).autoOrient().write('uploads/' + req.files[0].filename, function(err){
+    gm(imagePath).autoOrient().resize(640, 640).write('uploads/' + req.files[0].filename, function(err){
         if (err) {
             console.log(err)
         }
@@ -80,7 +80,7 @@ router.post('/products/ajax_summernote', upload.single('thumbnail'), function(re
 
 
     var imagePath = 'uploads/' + req.file.filename;
-    gm(imagePath).autoOrient().write('uploads/' + req.file.filename, function(err){
+    gm(imagePath).autoOrient().resize(640, 640).write('uploads/' + req.file.filename, function(err){
         if (!err) {
             res.send( '/uploads/' + req.file.filename);
         }
