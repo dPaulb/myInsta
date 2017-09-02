@@ -7,7 +7,7 @@ var KakaoStrategy = require('passport-kakao').Strategy;
 
 passport.use(new KakaoStrategy({
         clientID : "81e09a9a90afbd033744d90ce13c1704",
-        callbackURL : "http://localhost:2222/authKakao/oauth"
+        callbackURL : "http://localhost:3000/authKakao/oauth"
     },
     function(accessToken, refreshToken, profile, done){
         // 사용자의 정보는 profile에 들어있다.

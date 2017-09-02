@@ -8,7 +8,7 @@ var csrf = require('csurf')
 var csrfProtection = csrf({cookie : true})
 var co = require('co')
 var loginRequired = require('../../libs/loginRequired');
-
+var adminRequired = require('../../libs/adminRequired')
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -28,7 +28,7 @@ var upload = multer({ storage: storage , fileFilter: function (req, file, callba
 }})
 
 
-router.get('/', csrfProtection,function(req, res){
+router.get('/', adminRequired, csrfProtection,function(req, res){
 
 
 

@@ -1,60 +1,149 @@
-<%include header.ejs%>
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="col-md-6" id="bannerFont">
-        <div class="jumbotron" style="background-color: black">
+<head>
 
-            <a id="bigBanner" href="/photocategoryselect">
-                <h1>GO TO</h1>
-                <h1>SEE</h1>
-            </a>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>Clean Blog - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="/">dPaulb</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/photocategoryselect">CopyCat Instagram</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CopyCat Soundcloud</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('/static/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>dPaulb's Blog</h1>
+                    <span class="subheading">Inspired by INSTAGRAM and SOUNDCLOUD</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-preview">
+                <a href="/photocategoryselect">
+                    <h2 class="post-title">
+                        PHOTO ZONE
+                    </h2>
+                    <h3 class="post-subtitle">
+                        THANKS FOR WATCHING
+                    </h3>
+                </a>
+
+            </div>
+            <hr>
+            <div class="post-preview">
+                <a href="#">
+                    <h2 class="post-title">
+                        SOUND ZONE
+                    </h2>
+                    <h3 class="post-subtitle">
+                        THANKS FOR LISTENING
+                    </h3>
+                </a>
+
+            </div>
+            <hr>
 
         </div>
     </div>
-<div class="col-md-6" id="bannerFont">
-    <div class="jumbotron" style="background-color: black">
-
-        <a id="bigBanner" href="/musicbooth">
-            <h1>GO TO</h1>
-            <h1>LISTEN</h1>
-        </a>
-
-
-    </div>
 </div>
 
+<hr>
 
-        <div class="col-md-4"></div>
-        <div class="col-md-4" id="bannerFont">
-            <%if(isLogin){%>
-            <h1 style="text-align:center;color : black">Welcome! <%=userData.displayName%>님</h1>
-            <%} else{%>
-
-
-
-            <a href="/accounts/login" class="btn btn-block" style="text-align:center;color : black; border : solid 1px black">
-                <span class=""></span> Log In
-            </a>
-            <a href="/accounts/join" class="btn btn-block" style="text-align:center;color : black; border : solid 1px black">
-                <span class=""></span> Sign up to JKBOOTH
-            </a>
-            <%}%>
-            <a href="/chat" class="btn btn-block" style="text-align:center;color : black; border : solid 1px black">
-                <span class=""></span> Let's go to chat!
-            </a>
-            <a href="https://www.instagram.com/jkdec19/" class="btn btn-block " style="text-align:center;background-image: linear-gradient(to right, #720e9e 0, #dd4b39 100%);color : white">
-                <i class="fa fa-instagram" aria-hidden="true"></i> JK's INSTAGRAM
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100004443604215&fref=ts" class="btn btn-block " style="text-align:center;background-color: #3b5998; color : white">
-                <i class="fa fa-facebook" aria-hidden="true"></i> JK's FACEBOOK
-            </a>
-
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item">
+                        <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://github.com/dPaulb">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; dPaulb 2017</p>
+            </div>
         </div>
-        <div class="col-md-4"></div>
     </div>
+</footer>
 
-</div>
+<!-- Bootstrap core JavaScript -->
+<script src="/static/vendor/jquery/jquery.min.js"></script>
+<script src="/static/vendor/popper/popper.min.js"></script>
+<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
 
+<!-- Custom scripts for this template -->
+<script src="/static/js/clean-blog.min.js"></script>
 
+</body>
 
-<%include footer.ejs%>
+</html>

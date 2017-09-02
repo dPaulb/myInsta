@@ -13,13 +13,13 @@ router.get('/:uploadPath', function(req, res){
         //var product = yield ProductsModel.findOne({'id' :  req.params.id}).exec();
         //var comment = yield CommentsModel.find({'product_id' : req.params.id}).exec();
         return {
-            comment : yield CommentModel.find({'uploadPath' : req.params.uploadPath}).exec()
-
+            comment : yield CommentModel.find({'uploadPath' : req.params.uploadPath}).exec(),
+            category : yield CategoryModel.findOne({'photoName' : '/' + req.params.uploadPath}).exec()
         }
     })
     getData.then(function(result){
         //res.send(result)
-        res.render('photo/photoView', { uploadPath : uploadPath, comment: result.comment })
+        res.render('photo/photoView', { uploadPath : uploadPath, comment: result.comment, category : result.category })
     })
 })
 

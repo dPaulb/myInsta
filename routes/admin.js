@@ -23,12 +23,12 @@ var storage = multer.diskStorage({
 })
 var upload = multer({storage : storage})
 
-router.get('/',function(req,res){
+router.get('/', adminRequired,function(req,res){
     //edit에서도 같은 form을 사용하므로 빈 변수( product )를 넣어서 에러를 피해준다
     res.render('form', {category : ""});
 });
 
-router.post('/', upload.any(), function (req, res, next) {
+router.post('/', adminRequired,upload.any(), function (req, res, next) {
 
     var imagePath = 'uploads/' + req.files[0].filename;
     gm(imagePath).autoOrient().write('uploads/' + req.files[0].filename, function(err){

@@ -10,8 +10,8 @@ router.get('/result', (req, res) => {
     var regex = req.query.category
     CategoryModel.find({'title' : new RegExp(''+regex+'', "i")}, function(err, category){
         res.render('photo/searchResult', {category : category})
-        var reggg = new RegExp('^' + regex + '*' ,"i")
-        console.log(reggg)
+        // var reggg = new RegExp('^' + regex + '*' ,"i")
+        // console.log(reggg)
     })
 
 })

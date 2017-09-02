@@ -16,7 +16,7 @@ passport.deserializeUser(function (user, done) {
 passport.use(new FacebookStrategy({
         clientID: "1621181871285995",
         clientSecret: "3b1735296a19a4a9ce0862fd653f18da",
-        callbackURL: "http://localhost:2222/authFacebook/facebook/callback",
+        callbackURL: "http://localhost:3000/authFacebook/facebook/callback",
         profileFields: ['id', 'displayName', 'photos', 'email', 'friends']
     },
     function(accessToken, refreshToken, profile, done) {
@@ -58,7 +58,7 @@ router.get('/facebook/callback',
 //로그인 성공시 이동할 주소
 router.get('/facebook/success', function(req,res){
     //res.send(req.user);
-    res.redirect('/')
+    res.redirect('/photocategoryselect')
 });
 
 router.get('/facebook/fail', function(req,res){

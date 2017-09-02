@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const loginRequired = require('../../libs/loginRequired');
+const adminRequired = require('../../libs/adminRequired');
+
 var categoryModel = require('../../models/CategoryModel')
 var co = require('co')
 
@@ -14,7 +16,7 @@ router.get('/', function(req, res){
     })
 })
 
-router.get('/delete/:id', function(req, res){
+router.get('/delete/:id', adminRequired,function(req, res){
     var getData = co(function*(){
         //var product = yield ProductsModel.findOne({'id' :  req.params.id}).exec();
         //var comment = yield CommentsModel.find({'product_id' : req.params.id}).exec();

@@ -70,7 +70,7 @@ router.post('/login' ,
         failureFlash: true
     }),
     function(req, res){
-        res.send('<script>alert("로그인 성공");location.href="/";</script>');
+        res.send('<script>alert("로그인 성공");location.href="/photocategoryselect";</script>');
     }
 );
 
