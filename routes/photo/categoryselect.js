@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const loginRequired = require('../../libs/loginRequired');
 const adminRequired = require('../../libs/adminRequired');
-
+const fs = require('fs')
 var categoryModel = require('../../models/CategoryModel')
 var co = require('co')
 
@@ -22,6 +22,7 @@ router.get('/delete/:id', adminRequired,function(req, res){
         //var comment = yield CommentsModel.find({'product_id' : req.params.id}).exec();
         return {
             category : yield categoryModel.remove({'id' :  req.params.id}).exec()
+
         }
     })
 

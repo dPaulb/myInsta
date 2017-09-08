@@ -10,6 +10,7 @@ var adminRequired = require('../libs/adminRequired')
 var im = require('imagemagick');
 var uploadDir = path.join(__dirname, '../uploads')
 var co = require('co')
+var mkdirp = require('mkdirp')
 
 var storage = multer.diskStorage({
 
@@ -64,6 +65,8 @@ router.post('/', adminRequired,upload.any(), function (req, res, next) {
         thumbnail.save(function(err){
             res.redirect('/photocategoryselect')
         })
+
+
 
 
     })

@@ -6,7 +6,7 @@ var MusicSelectModel = require('../../models/MusicSelectModel')
 var fs = require('fs')
     , gm = require('gm');
 var adminRequired = require('../../libs/adminRequired')
-
+var mm = require('musicmetadata');
 var uploadDir = path.join(__dirname, '../../musicuploads')
 
 var storage = multer.diskStorage({
@@ -35,14 +35,26 @@ router.post('/', upload.any(), function (req, res, next) {
         }
     });
 
+    if(req.files[1]){
+        var audioFileNames = "";
+        for(var i = 1;i<req.files.length;i++){
+
+            audioFileNames += ("/" + req.files[i].filename);
+        }
+    }
+
 
     const music = new MusicSelectModel({
         title : req.body.title,
         thumbnail : (req.files[0]) ? req.files[0].filename : "",
-        audioFileName: (req.files[1]) ? req.files[1].filename : "",
+        audioFileName: (req.files[1]) ? audioFileNames : "",
         price : req.body.price
     })
     music.save(function(err){
+        var parser = mm(fs.createReadStream('musicuploads/' + req.files[1].filename), function (err, metadata) {
+            if (err) throw err;
+            console.log(metadata);
+        });
         res.redirect('/musicbooth')
     })
 

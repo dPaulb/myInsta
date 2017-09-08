@@ -11,5 +11,12 @@ router.get('/', function(req, res){
     });
 })
 
+router.get('/mobile', function(req, res){
+    musicSelectModel.find( function(err, music){ //첫번째 인자는 err, 두번째는 받을 변수명
+
+        res.render( 'music/m_musicSelect.ejs' , { music : music });
+    });
+})
+
 
 module.exports = router;
