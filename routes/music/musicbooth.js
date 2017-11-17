@@ -31,5 +31,18 @@ router.get('/mobile', function(req, res){
     });
 })
 
+router.get('/mainPage', function(req, res){
+    var getData = co(function*(){
+        return {
+            music : yield musicSelectModel.find({}).sort({id : 'desc'}).exec()
+        }
+    })
+
+
+    getData.then(function(result){
+        res.render('music/mainPage', { music : result.music})
+    })
+})
+
 
 module.exports = router;
